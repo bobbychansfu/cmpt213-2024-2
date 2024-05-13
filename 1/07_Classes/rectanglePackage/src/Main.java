@@ -6,9 +6,11 @@ public class Main {
         Rectangle r2 = new Rectangle(5,40);
         System.out.println(r1);
         System.out.println(r2);
+
         if (r1.equals(r2)) {
             System.out.println("EQUALS!");
         }
         System.out.println(Rectangle.getTotalRectangles());
     }
+    
 }
