@@ -13,7 +13,7 @@ public class Input {
             lname = input.next();
             System.out.print("Enter your age: ");
             age = input.nextInt();
-            input.nextLine();
+            input.nextLine(); // consuming the buffer
             System.out.print("Enter your phone number: ");
             phone = input.nextLine();
             input.close();
