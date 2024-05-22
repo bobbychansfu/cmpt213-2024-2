@@ -1,3 +1,4 @@
+import ca.cmpt213.dice.Die;
 import ca.cmpt213.rectangle.Rectangle;
 
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class Main {
         for (Rectangle rec: boxes){
             System.out.println(rec);
         }
+
+        Die d = new Die(3);
     }
 
 }
