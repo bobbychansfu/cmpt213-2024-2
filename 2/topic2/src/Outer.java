@@ -43,6 +43,15 @@ class Outer{
     }
 
     public static void main(String... args){
+//        Outer.Stat printer = new Outer.Stat();
+//        printer.display();
+
+        Outer outer = new Outer();
+//        Outer.InnerNonStat innerPrinter = outer.new InnerNonStat();
+        Outer.InnerNonStat innerPrinter = new Outer().new InnerNonStat();
+        innerPrinter.display();
+
+        outer.display();
 
     }
 
