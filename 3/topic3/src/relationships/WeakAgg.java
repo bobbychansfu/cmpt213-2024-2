@@ -7,7 +7,7 @@ public class WeakAgg {
     class Instructor {
         // ...
     }
-    class Manager {
+    class Faculty {
         List<Instructor> facultyMembers = new ArrayList<>();
         void addAsset(Instructor a) {
             facultyMembers.add(a);

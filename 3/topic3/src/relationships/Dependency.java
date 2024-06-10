@@ -2,7 +2,7 @@ package relationships;
 
 public class Dependency {
     class Report {
-        public void editReport() {
+        public void editReport(/* ... */) {
 
         }
     }
