@@ -13,6 +13,11 @@ public class SharedReference {
         Date b = new GregorianCalendar(2016, Calendar.MAY, 22, 23, 2).getTime();
         Person jacob = new Person("Jacob", 8, b);
 
+        // malicious
+        Date d = jacob.getBirthday();
+        d.setTime(0);
+
+        System.out.println(jacob.getBirthday());
 
     }
 }

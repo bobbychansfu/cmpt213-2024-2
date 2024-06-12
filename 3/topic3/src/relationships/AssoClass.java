@@ -6,6 +6,8 @@ public class AssoClass {
     class Enroll {
         private Student s;
         private CourseSection cs;
+        private boolean eligibility;
+        private String grade;
 
     }
 }
