@@ -28,8 +28,8 @@ public class Degree implements Iterable<Course>{
 	 */
 	@Override
 	public Iterator<Course> iterator() {
-		//return courses.iterator();
-		return courses.iterator();
+
+		return Collections.unmodifiableCollection(courses).iterator();
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class Degree implements Iterable<Course>{
 		return new Iterable<Course>(){
 			@Override
 			public Iterator<Course> iterator() {
-				return courses.iterator();
+				return Collections.unmodifiableCollection(courses).iterator();
 			}
 		};
 	}
@@ -49,7 +49,7 @@ public class Degree implements Iterable<Course>{
 		return new Iterable<Person>(){
 			@Override
 			public Iterator<Person> iterator() {
-				return students.iterator();
+				return Collections.unmodifiableCollection(students).iterator();
 			}
 		};
 	}

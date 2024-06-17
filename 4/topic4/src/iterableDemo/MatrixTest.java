@@ -7,8 +7,8 @@ public class MatrixTest {
         Matrix matrix = Matrix.makeSequentialMatrix(4,3);
         System.out.println(matrix);
         
-        Iterator<Integer> itr = matrix.iterator();
-        itr.remove();
+//        Iterator<Integer> itr = matrix.iterator();
+//        itr.remove();
         
         for (Integer v : matrix) {
             System.out.println(v);

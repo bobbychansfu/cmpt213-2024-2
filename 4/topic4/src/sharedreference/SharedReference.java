@@ -20,4 +20,15 @@ public class SharedReference {
         System.out.println(jacob.getBirthday());
 
     }
+
+    private static void exploitConstructor() {
+        Date now = new Date();
+        Person jacob = new Person("Jacob", 0, now);
+        System.out.println(jacob.getBirthday());
+
+        // malicious
+        now.setTime(0);
+
+        System.out.println(jacob.getBirthday());
+    }
 }

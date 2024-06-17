@@ -12,7 +12,7 @@ public class Person {
     {
         age = a;
         name = n;
-        birthday = bd;
+        birthday = (Date) bd.clone();
     }
 
     public int getAge(){
@@ -22,6 +22,6 @@ public class Person {
         return this.name;
     }
     public Date getBirthday() {
-        return this.birthday;
+        return (Date) this.birthday.clone();
     }
 }
