@@ -9,8 +9,7 @@ public class FinalExam extends GradedActivity {
    private double pointsEach; // Points for each question
    private int numMissed;     // Questions missed
 
-   public FinalExam(int questions, int missed)
-   {
+   public FinalExam(int questions, int missed) {
       double numericScore;  // To hold a numeric score
       numQuestions = questions;
       numMissed = missed;
@@ -22,12 +21,10 @@ public class FinalExam extends GradedActivity {
       setScore(numericScore);
    }
 
-   public double getPointsEach()
-   {
+   public double getPointsEach() {
       return pointsEach;
    }
-   public int getNumMissed()
-   {
+   public int getNumMissed() {
       return numMissed;
    }
 

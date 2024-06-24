@@ -7,16 +7,14 @@ package graded;
 public class GradedActivity {
    private double score;
 
-   public void setScore(double s)
-   {
+   public void setScore(double s) {
       score = s;
    }
-   public double getScore()
-   {
+   public double getScore() {
       return score;
    }
-   public String getGrade()
-   {
+
+   public String getGrade() {
       String letterGrade;
 
       if (score >= 90)
@@ -32,5 +30,4 @@ public class GradedActivity {
 
       return letterGrade;
    }
-
 }

@@ -11,15 +11,9 @@ public class PassFailExam extends GradedActivity {
    private int numMissed;     // Number of questions missed
    private int MINPASSING = 50;
 
-   public PassFailExam(int questions, int missed)
-   {
-      // Call the superclass constructor.
-      super();
+   public PassFailExam(int questions, int missed) {
 
-      // Declare a local variable for the score.
       double numericScore;
-
-      // Set the numQuestions and numMissed fields.
       numQuestions = questions;
       numMissed = missed;
 
@@ -29,17 +23,15 @@ public class PassFailExam extends GradedActivity {
       // set the numeric score.
       setScore(numericScore);
    }
-   public double getPointsEach()
-   {
+   public double getPointsEach() {
       return pointsEach;
    }
-   public int getNumMissed()
-   {
+   public int getNumMissed() {
       return numMissed;
    }
 
    @Override
-   public String getGrade(){
+   public String getGrade() {
       if (getScore() >= MINPASSING){
          return "P";
       }

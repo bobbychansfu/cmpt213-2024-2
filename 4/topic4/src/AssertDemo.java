@@ -1,7 +1,6 @@
 
 public class AssertDemo {
     public static void main(String[] args) {
-
         assertRadius();
     }
     private static void assertRadius(){
