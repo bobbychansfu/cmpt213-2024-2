@@ -12,6 +12,15 @@ public class IteratorClarity {
         list.add("C");
 
         ListIterator<String> iterator = list.listIterator();
+        iterator.next();  // A|BC
+        iterator.add("X");  // AX|BC
+
+        System.out.println(list);
+
+        iterator.next();   // AXB|C
+        iterator.remove();
+
+        System.out.println(list);
 
     }
 

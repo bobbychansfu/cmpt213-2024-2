@@ -7,12 +7,13 @@ import java.awt.geom.Point2D;
  */
 interface GoodPoint2D {
 	void setLocation(int x, int y);
-	void setHeight(int height);
+	void setY(); // void setHeight(int height); // clarity
+	void setX(); // completeness
 	int getX();
-	int getYValue();
-	double getDistanceTo(int y, int x);
+	int getY(); // int getYValue(); - consistent
+	double getDistanceTo(int x, int y); // double getDistanceTo(int y, int x); // consistent
 	void drawStarAtPoint();
 	void drawCircleAtPoint(int radius);
-	double computeTriangle(Point2D p1, Point2D p2);
+	// double computeTriangle(Point2D p1, Point2D p2); // Cohesion
 
 }
