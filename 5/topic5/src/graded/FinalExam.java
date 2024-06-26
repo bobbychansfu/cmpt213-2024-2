@@ -10,6 +10,8 @@ public class FinalExam extends GradedActivity {
    private int numMissed;     // Questions missed
 
    public FinalExam(int questions, int missed) {
+      // superclass constructor
+      super();
       double numericScore;  // To hold a numeric score
       numQuestions = questions;
       numMissed = missed;
@@ -18,7 +20,7 @@ public class FinalExam extends GradedActivity {
       numericScore = 100.0 - (missed * pointsEach);
 
       // set the numeric score.
-      setScore(numericScore);
+      this.score = numericScore;
    }
 
    public double getPointsEach() {

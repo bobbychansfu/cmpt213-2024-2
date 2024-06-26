@@ -6,15 +6,16 @@ public class SuperClass {
     }
     public SuperClass(int arg){
         System.out.println("SUPERCLASS constructor, arg: "+ arg);
+        showValues(5);
     }
 
-    /*
+
     public void showValues(int arg) {
-        System.out.println("showValue() - SUPERCALSS int arg " + arg);
+        System.out.println("showValue() - SUPERCLASS int arg " + arg);
     }
-    public void showValues(String arg) {
-        System.out.println("showValue() - SUPERCALSS Str arg " + arg);
+    final public void showValues(String arg) {
+        System.out.println("showValue() - SUPERCLASS Str arg " + arg);
     }
-    */
+
 
 }

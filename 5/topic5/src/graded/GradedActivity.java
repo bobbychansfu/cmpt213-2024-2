@@ -5,7 +5,7 @@ package graded;
 */
 
 public class GradedActivity {
-   private double score;
+   protected double score;
 
    public void setScore(double s) {
       score = s;
@@ -29,5 +29,11 @@ public class GradedActivity {
          letterGrade = "F";
 
       return letterGrade;
+   }
+
+   @Override
+   public boolean equals(Object other) {
+      GradedActivity otherGradedActivity = (GradedActivity) other;
+      return this.score == otherGradedActivity.score;
    }
 }
