@@ -8,7 +8,7 @@ public class PolymorphicInterfaceDemo
 
       // Create a CompactDisc object.
       CompactDisc cd =
-              new CompactDisc("Love Yourself", "BTS", 26.95);
+              new CompactDisc("5-Star", "Stray Kids", 26.95);
       // Create a DvdMovie object.
       DvdMovie movie =
               new DvdMovie("Avengers Endgame", 195, 19.95);
