@@ -4,8 +4,7 @@ package student;
    This class holds data for a computer science student.
 */
 
-public class CmptStudent extends Student
-{
+public class CmptStudent extends Student {
    // Required credits
    private final int MATH_CREDITS = 20;   // Math 
    private final int CS_CREDITS = 60;     // Comp sci credits
