@@ -1,4 +1,4 @@
-package ca.cmpt213.topic6;
+package ca.cmpt213.topic6.a;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class ButtonDemo extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 

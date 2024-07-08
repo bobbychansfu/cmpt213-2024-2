@@ -1,4 +1,4 @@
-package ca.cmpt213.topic6;
+package ca.cmpt213.topic6.a;
 
 import javafx.application.Application;
 import javafx.scene.control.Button;
