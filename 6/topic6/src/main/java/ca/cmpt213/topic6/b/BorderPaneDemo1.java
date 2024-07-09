@@ -30,11 +30,8 @@ public class BorderPaneDemo1 extends Application {
         centerBox.setPrefSize(300,400);
         
         BorderPane bp = new BorderPane(centerBox,top,right,bottom,left);
-
         Scene scene = new Scene(bp,640,480);
-
         primaryStage.setScene(scene);
-
         primaryStage.show();
 
     }

@@ -28,21 +28,16 @@ public class ImageDemo extends Application
       // Create an ImageView control.
       ImageView imageView = new ImageView(image);
       imageView.setFitWidth(300);
-      imageView.setPreserveRatio(true);
+//      imageView.setPreserveRatio(true);
       
       // Put the ImageView in an HBox.
       HBox hbox = new HBox(imageView);
-      
-
       // Create a Scene with the HBox as its root node.
       Scene scene = new Scene(hbox);
-      
       // Add the Scene to the Stage.
       primaryStage.setScene(scene);
-      
       // Set the stage title.
       primaryStage.setTitle("Baby");
-      
       // Show the window.
       primaryStage.show();
    }

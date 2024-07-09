@@ -26,7 +26,10 @@ public class Triangle extends Application
       Line line3 = new Line(20, 220, 310, 220);
 
       // Set each line's stroke color.
+      line1.setStrokeWidth(6);
+      line1.setStroke(Color.AQUA);
 
+      line2.setStroke(new Color(0.5,0.7,0.7,0.5));
 
 
 

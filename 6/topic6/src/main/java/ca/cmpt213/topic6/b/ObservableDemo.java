@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * JavaFX App
@@ -35,14 +36,28 @@ public class ObservableDemo extends Application {
         VBox vbox = new VBox(10);
         vbox.getChildren().addAll(l1,l2,l3,l4,l5);
 
+        Button remove = new Button("KILL FOKI");
+        remove.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                vbox.getChildren().remove(0);
+            }
+        });
 
-
-
+        Button add = new Button("ADD FOKI");
+        add.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Random r = new Random();
+                int n = r.nextInt(100);
+                vbox.getChildren().add(0,new Label("Fokimon "+n));
+            }
+        });
 
 
 
         vbox.setAlignment(Pos.TOP_CENTER);
-        HBox hb = new HBox(30,vbox);
+        HBox hb = new HBox(30,vbox,remove, add);
         hb.setAlignment(Pos.TOP_CENTER);
         hb.setPadding(new Insets(30));
         Scene scene = new Scene(hb,640,480);

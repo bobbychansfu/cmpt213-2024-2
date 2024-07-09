@@ -37,13 +37,24 @@ public class KiloConverter extends Application
       kiloTextField = new TextField();
       // validate text field
 
-
+      kiloTextField.textProperty().addListener(((observableValue, s, t1) -> {
+         if (!t1.matches("\\d{0,7}([.]\\d{0,4})?")) {
+            kiloTextField.setText(s);
+         }
+      }));
 
 
       // Create a Button to perform the conversion.
       Button calcButton = new Button("Convert");
       // Register the event handler.
-
+      calcButton.setOnAction(new EventHandler<ActionEvent>() {
+         @Override
+         public void handle(ActionEvent actionEvent) {
+            double km = Double.parseDouble(kiloTextField.getText());
+            double miles = km / 1.6;
+            resultLabel.setText(String.format("%,.2f miles",miles));
+         }
+      });
 
 
 

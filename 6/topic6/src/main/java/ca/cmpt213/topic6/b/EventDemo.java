@@ -29,6 +29,15 @@ public class EventDemo extends Application
    {
       myLabel = new Label("Click the button to see a message.");
       Button myButton = new Button("Click me");
+      // handling the click event
+      myButton.setOnAction(new ButtonClickHandler());
+//      myButton.setOnAction(new EventHandler<ActionEvent>() {
+//         @Override
+//         public void handle(ActionEvent actionEvent) {
+//            System.out.println("button clicked");
+//         }
+//      });
+
       // Vbox with label and button
       VBox vbox = new VBox(10, myLabel, myButton);
       // new scene
@@ -42,5 +51,10 @@ public class EventDemo extends Application
    }
 
    // event handler class
-
+   class ButtonClickHandler implements EventHandler<ActionEvent> {
+      @Override
+      public void handle(ActionEvent event) {
+         myLabel.setText("Thank you for clicking me!!!!");
+      }
+   }
 }
