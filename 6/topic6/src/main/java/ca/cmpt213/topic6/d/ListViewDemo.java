@@ -33,6 +33,13 @@ public class ListViewDemo extends Application
       Label selectedNameLabel = new Label("Select a Name");
       
       // Create an event handler for the ListView control.
+      listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+         @Override
+         public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+            String selected = listView.getSelectionModel().getSelectedItem();
+            selectedNameLabel.setText(selected);
+         }
+      });
 
 
 

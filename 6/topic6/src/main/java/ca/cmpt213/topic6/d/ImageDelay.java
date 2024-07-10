@@ -1,4 +1,4 @@
-package ca.cmpt213.topic6.b;
+package ca.cmpt213.topic6.d;
 
 import javafx.application.Application;
 import javafx.concurrent.Task;
@@ -16,7 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class ImageHandler extends Application
+public class ImageDelay extends Application
 {
     public static void main(String[] args)
     {
@@ -65,7 +65,7 @@ public class ImageHandler extends Application
             sleep.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
                 @Override
                 public void handle(WorkerStateEvent workerStateEvent) {
-                    messageLabel.setText("Germany Flag Clicked!");
+                    messageLabel.setText("Hello World");
                     System.out.println(mouseEvent.getSource());
                     System.out.println(mouseEvent.getEventType());
                     System.out.println(mouseEvent.getX());
@@ -75,7 +75,6 @@ public class ImageHandler extends Application
             new Thread(sleep).start();
 
         });
-
 
         VBox vbox1 = new VBox(messageLabel);
         vbox1.setAlignment(Pos.CENTER);
@@ -102,14 +101,11 @@ public class ImageHandler extends Application
             }
         });
 
-
-
         // Add the Scene to the Stage.
         primaryStage.setScene(scene);
         // Show the window.
         primaryStage.show();
-    }
 
-    // image handler
+    }
 
 }

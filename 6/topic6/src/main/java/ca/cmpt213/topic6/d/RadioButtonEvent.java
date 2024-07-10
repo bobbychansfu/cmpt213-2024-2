@@ -49,10 +49,20 @@ public class RadioButtonEvent extends Application
       sunsetRadio.setToggleGroup(radioGroup);
 
       // Register an ActionEvent handler for the flowerRadio.
-
+      flowerRadio.setOnAction(new EventHandler<ActionEvent>() {
+         @Override
+         public void handle(ActionEvent actionEvent) {
+            imageView.setImage(flowerImage);
+         }
+      });
 
       // Register an event handler for the sunsetRadio.
-
+      sunsetRadio.setOnAction(new EventHandler<ActionEvent>() {
+         @Override
+         public void handle(ActionEvent actionEvent) {
+            imageView.setImage(sunsetImage);
+         }
+      });
 
       // Add the RadioButtons to a VBox.
       VBox radioVBox = new VBox(10, flowerRadio, sunsetRadio);

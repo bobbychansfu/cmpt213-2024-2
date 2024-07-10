@@ -44,7 +44,7 @@ public class ScaleText extends Application
       text3.setScaleY(SCALE_QTR);
 
       // rotate
-
+      text3.setRotate(45.0);
 
       // Add the text to a Pane.
       Pane pane = new Pane(text1, text2, text3);
