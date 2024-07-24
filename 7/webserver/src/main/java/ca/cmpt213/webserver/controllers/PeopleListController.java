@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 public class PeopleListController {
-
+    private AtomicInteger nextId;
     private PeopleList peopleList;
 
     // @RequestMapping(value="/person",method=RequestMethod.GET)
@@ -31,6 +31,7 @@ public class PeopleListController {
     @PostMapping("/person")
     public Person addPerson(@RequestBody Person newPerson, HttpServletResponse response) {
         System.out.println("POST /person");
+        newPerson.setPid(nextId.getAndIncrement());
         peopleList.addPerson(newPerson);
         response.setStatus(HttpServletResponse.SC_CREATED);
         return newPerson;
@@ -53,5 +54,17 @@ public class PeopleListController {
     public void init() {
         // TODO: call peopleList to initialize people //
         System.out.println("POST CONSTRUCT CODE");
+        peopleList = new PeopleList();
+        nextId = new AtomicInteger(1);
+        Person p1 = new Person("bob", 44);
+        p1.setPid(nextId.getAndIncrement());
+        peopleList.addPerson(p1);
+        Person p2 = new Person("john", 33);
+        p2.setPid(nextId.getAndIncrement());
+        peopleList.addPerson(p2);
+        Person p3 = new Person("jane", 22);
+        p3.setPid(nextId.getAndIncrement());
+        peopleList.addPerson(p3);
+
     }
 }

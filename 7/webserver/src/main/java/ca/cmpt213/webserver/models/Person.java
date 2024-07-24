@@ -1,13 +1,13 @@
 package ca.cmpt213.webserver.models;
 
 public class Person {
-    static private int total = 0;
+    // static private int total = 0;
     private long pid;
     private String name;
     private int age;
 
     public Person(String name, int age) {
-        this.pid = total++;
+        // this.pid = total++;
         this.name = name;
         this.age = age;
     }

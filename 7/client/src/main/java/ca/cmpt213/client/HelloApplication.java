@@ -37,6 +37,63 @@ public class HelloApplication extends Application {
 
         Label outputLabel = new Label();
 
+        Image img = new Image("http://localhost:8081/icon.png");
+        ImageView imageView = new ImageView(img);
+        imageView.setFitHeight(200);
+        imageView.setPreserveRatio(true);
+
+        submit2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                try {
+                    URI uri = new URI("http://localhost:8081/person");
+                    URL url = uri.toURL();
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("GET");
+
+                    connection.getInputStream();
+                    BufferedReader br = new BufferedReader(
+                            new InputStreamReader(connection.getInputStream()));
+                    String output = br.readLine();
+                    System.out.println(output);
+                    System.out.println(connection.getResponseCode());
+                    outputLabel.setText(output);
+                    connection.disconnect();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        submit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                String name = nameField.getText();
+                String age = ageField.getText();
+                try {
+                    URI uri = new URI("http://localhost:8081/person");
+                    URL url = uri.toURL();
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setRequestMethod("POST");
+                    connection.setDoOutput(true);
+                    connection.setRequestProperty("Content-Type", "application/json");
+
+                    OutputStreamWriter wr = new OutputStreamWriter(connection.getOutputStream());
+                    System.out.println("{\"name\":\"" + name + "\",\"age\":" + age + "}");
+                    wr.write("{\"name\":\"" + name + "\",\"age\":" + age + "}");
+                    wr.flush();
+                    wr.close();
+                    connection.connect();
+                    System.out.println(connection.getResponseCode());
+                    connection.disconnect();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
 
         GridPane gridpane = new GridPane();
         gridpane.add(nameLabel, 0, 0);
@@ -49,7 +106,7 @@ public class HelloApplication extends Application {
 
 
 
-        VBox vb = new VBox(20, gridpane, outputLabel);
+        VBox vb = new VBox(20, gridpane, outputLabel, imageView);
 
         Scene scene = new Scene(vb, 500, 240);
 
