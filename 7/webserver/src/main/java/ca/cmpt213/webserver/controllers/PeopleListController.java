@@ -1,11 +1,8 @@
 package ca.cmpt213.webserver.controllers;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
-import jakarta.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.springframework.web.bind.annotation.*;
 
 import ca.cmpt213.webserver.models.PeopleList;
